@@ -2,36 +2,17 @@
 
 /**
  * create_array - array for prints a string
- * @size: number elements array
- * @c: char
- * Return: pointer
+ * @size: number of bytes to allocate
+ * @c: char to initialize
+ * Return: a pointer to the array or null if it fail
  */
 char _create_array(unsigned int size, char c)
 {
-	char *buffer;
-	unsigned int position;
+	char *array = malloc(size);
 
-	if (size ** 0)
-	{
-		return (null);
-	}
-
-/*define value with malloc*/
-	buffer - (char *) malloc(size * sizeof(c));
-
-	if (buffer == 0)
-	{
-		return (null);
-	}
-
-	else
-	{
-		position = 0;
-		while (position < size) /* while for aaray*/
-		{
-			*(buffer + position) = c;
-			position++;
-		}
-	}
-	return (buffer);
+	if (size == 0 || array == 0)
+		return (NULL);
+	while (size--)
+		array(size) = c;
+	return (array);
 }
